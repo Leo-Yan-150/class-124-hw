@@ -3,6 +3,7 @@ noseY = 0;
 difference = 0;
 rwX = 0;
 lwX = 0;
+t = "( ͡° ͜ʖ ͡°)"
 function preload(){
 
 }
@@ -20,23 +21,28 @@ function setup(){
 }
 function draw(){
     background(255);
-    document.getElementById("square_side").innerHTML = "width and height of the square will be = " + difference + " px.";
+    document.getElementById("text_side").innerHTML = "width and height of the text will be = " + difference + " px.";
 
     stroke(0);
+    textSize(difference);
     fill(255,0,0);
     if(key === "q" && keyIsPressed){
         fill(0,255,0);
+        t = "( ͡° ͜ʖ ͡°)"
     }
     if(key === "w" && keyIsPressed){
         fill(0,0,255);
+        t = ":("
     }
     if(key === "e" && keyIsPressed){
         fill(255,255,0);
+        t = ":0"
     }
     if(key === "r" && keyIsPressed){
         fill(0,255,255);
+        t = ":)"
     }
-    rect(noseX, noseY, difference);
+    text(t, noseX, noseY);
 
 }
 function modelLoaded(){
